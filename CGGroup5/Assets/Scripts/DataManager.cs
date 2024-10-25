@@ -32,7 +32,7 @@ public class DataManager : MonoBehaviour
 {
     public static DataManager instance;
 
-    PlayerData nowPlayer = new PlayerData();
+    public PlayerData nowPlayer = new PlayerData();
 
     string path;
     string filename = "save";
@@ -55,21 +55,17 @@ public class DataManager : MonoBehaviour
     }
     void Start()
     {
-        if (!System.IO.File.Exists(path+filename))
+        if (!System.IO.File.Exists(path+filename)) //파일이 로컬에 저장되지 않았다면 초기값 생성
         {
             Initialize();
         }
-        else
+        else //파일이 존재하면 로컬로부터 로드
         {
             LoadData();
         }
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     void SaveData() //로컬에 플레이어 데이터 저장
     {
@@ -87,9 +83,9 @@ public class DataManager : MonoBehaviour
     void Initialize() // 플레이어 초기값 설정
     {
         // 플레이어 기본 정보
-        nowPlayer.name = "Player1"; // 플레이어 이름 초기값
+        nowPlayer.name = "Player1"; // 플레이어 이름 초기값 (나중에는 인풋필드로 받아들인 값을 들어가게 할 예정)
         nowPlayer.coin = 100;       // 초기 코인
-        nowPlayer.item = 0;         // 기본 장착 아이템 (고유번호 0)
+        nowPlayer.item = -1;         // 기본 장착 아이템이 없음
         nowPlayer.chapterIndex = 0; // 첫 번째 챕터부터 시작
 
         // 챕터 잠금 상태 초기화
@@ -99,7 +95,7 @@ public class DataManager : MonoBehaviour
         }
         nowPlayer.isChapterUnlock[0] = true; // 첫 번째 챕터는 기본 해금 상태
 
-        // 초기 아이템 설정
+        // 초기 아이템 설정 (해금되지 않은 아이템 목록 생성)
         nowPlayer.inventory.items.Add(new Item { id = 1, name = "체력의 팔찌", isItemUnlock = false, damage = 0, hp = 5 });
         nowPlayer.inventory.items.Add(new Item { id = 2, name = "체력의 모자", isItemUnlock = false, damage = 0, hp = 10 });
         nowPlayer.inventory.items.Add(new Item { id = 3, name = "공격의 팔찌", isItemUnlock = false, damage = 5, hp = 0 });
