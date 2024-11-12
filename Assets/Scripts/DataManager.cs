@@ -1,10 +1,9 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using TMPro;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+
 
 public class Item
 {
@@ -26,7 +25,7 @@ public class PlayerData
     public int coin; //플레이어 재화
     public int item; //item에 각 고유번호가 있어 현재 장착중인 장비를 불러오는데 쓰이는 정수값
     public bool[] isChapterUnlock = new bool[10]; //챕터의 잠금여부를 저장하는 배열
-    public int chapterIndex; //현재 해금된 최대 챕터
+    public int chapterIndex; //현재 해금된 최대 챕터 -> 현재 선택한 게임의 난이도
     //환경설정 세팅값 추가예정
     public PlayerInventory inventory = new PlayerInventory(); //갖고 있는 아이템들 정보
 }

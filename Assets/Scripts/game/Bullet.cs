@@ -14,7 +14,13 @@ public class Bullet : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Player"))
         {
-            return;
+            Health playerHealth = collision.gameObject.GetComponent<Health>();
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(damage);  // 데미지 적용
+            }
+
+            Destroy(gameObject);  // 총알 삭제
         }
         else if (collision.gameObject.CompareTag("Enemy"))
         {
