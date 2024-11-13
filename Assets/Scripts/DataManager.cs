@@ -26,6 +26,7 @@ public class PlayerData
     public int item; //item에 각 고유번호가 있어 현재 장착중인 장비를 불러오는데 쓰이는 정수값
     public bool[] isChapterUnlock = new bool[10]; //챕터의 잠금여부를 저장하는 배열
     public int chapterIndex; //현재 해금된 최대 챕터 -> 현재 선택한 게임의 난이도
+    public int maxChapterIndex;
     //환경설정 세팅값 추가예정
     public PlayerInventory inventory = new PlayerInventory(); //갖고 있는 아이템들 정보
 }
@@ -98,7 +99,7 @@ public class DataManager : MonoBehaviour
         nowPlayer.coin = 100;       // 초기 코인
         nowPlayer.item = -1;         // 기본 장착 아이템이 없음
         nowPlayer.chapterIndex = 0; // 첫 번째 챕터부터 시작
-
+        nowPlayer.maxChapterIndex = 0;
         // 챕터 잠금 상태 초기화
         for (int i = 0; i < nowPlayer.isChapterUnlock.Length; i++)
         {
@@ -107,11 +108,11 @@ public class DataManager : MonoBehaviour
         nowPlayer.isChapterUnlock[0] = true; // 첫 번째 챕터는 기본 해금 상태
 
         // 초기 아이템 설정 (해금되지 않은 아이템 목록 생성)
-        nowPlayer.inventory.items.Add(new Item { id = 1, name = "체력의 팔찌", isItemUnlock = false, damage = 0, hp = 5 });
-        nowPlayer.inventory.items.Add(new Item { id = 2, name = "체력의 모자", isItemUnlock = false, damage = 0, hp = 10 });
-        nowPlayer.inventory.items.Add(new Item { id = 3, name = "공격의 팔찌", isItemUnlock = false, damage = 5, hp = 0 });
-        nowPlayer.inventory.items.Add(new Item { id = 4, name = "공격의 모자", isItemUnlock = false, damage = 10, hp = 0 });
-        nowPlayer.inventory.items.Add(new Item { id = 5, name = "궁극의 모자", isItemUnlock = false, damage = 10, hp = 10 });
+        nowPlayer.inventory.items.Add(new Item { id = 1, name = "체력의 팔찌", isItemUnlock = false, damage = 0, hp = 20 });
+        nowPlayer.inventory.items.Add(new Item { id = 2, name = "체력의 모자", isItemUnlock = false, damage = 0, hp = 40 });
+        nowPlayer.inventory.items.Add(new Item { id = 3, name = "공격의 팔찌", isItemUnlock = false, damage = 20, hp = 0 });
+        nowPlayer.inventory.items.Add(new Item { id = 4, name = "공격의 모자", isItemUnlock = false, damage = 40, hp = 0 });
+        nowPlayer.inventory.items.Add(new Item { id = 5, name = "궁극의 모자", isItemUnlock = false, damage = 30, hp = 30 });
 
         // 데이터를 JSON 파일로 저장
         SaveData(username);
