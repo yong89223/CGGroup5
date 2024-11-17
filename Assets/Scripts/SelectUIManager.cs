@@ -48,7 +48,7 @@ public class SelectUIManager : MonoBehaviour
 
     void EnterStage(int chapterIndex)
     {
-        // 실제 스테이지 씬으로 이동하거나 게임 시작 로직 호출
-        Debug.Log($"스테이지 {chapterIndex} 이동 로직을 여기에 추가하세요.");
+        DataManager.instance?.ClearLobbyUI();
+        UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
     }
 }
