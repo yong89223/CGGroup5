@@ -1,9 +1,20 @@
 using UnityEngine;
 using System;
+
 public class Bullet : MonoBehaviour
 {
-    public int playerDamage = 20 + DataManager.instance.nowPlayer.inventory.items.Find(item => item.id == DataManager.instance.nowPlayer.item).damage;
-    public int damage = 10;
+    public int basePlayerDamage = 20; // 기본 데미지
+    private int playerDamage;
+    public int damage = 10; // 벽이나 플레이어를 때리는 데미지
+
+    private void Start()
+    {
+        // DataManager를 활용하여 playerDamage 초기화
+        var equippedItem = DataManager.instance.nowPlayer.inventory.items.Find(item => item.id == DataManager.instance.nowPlayer.item);
+        int itemBonusDamage = equippedItem != null ? equippedItem.damage : 0;
+        playerDamage = basePlayerDamage + itemBonusDamage;
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("Collision Detected with: " + collision.gameObject.name);
@@ -18,10 +29,10 @@ public class Bullet : MonoBehaviour
             Health playerHealth = collision.gameObject.GetComponent<Health>();
             if (playerHealth != null)
             {
-                playerHealth.TakeDamage(damage);  // 데미지 적용
+                playerHealth.TakeDamage(damage); // 데미지 적용
             }
 
-            Destroy(gameObject);  // 총알 삭제
+            Destroy(gameObject); // 총알 삭제
         }
         else if (collision.gameObject.CompareTag("Enemy"))
         {

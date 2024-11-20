@@ -120,6 +120,12 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Select");
     }
 
+    public void MenuButtonClick()
+    {
+        // Select 씬으로 돌아가기
+        SceneManager.LoadScene("Select");
+    }
+
     private void UnlockNextStage(int currentStageIndex)
     {
         // 다음 스테이지 인덱스 계산
