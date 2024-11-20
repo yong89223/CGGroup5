@@ -19,17 +19,15 @@ public class BulletShooting : MonoBehaviour
     {
         if (bulletPrefab != null)
         {
-            // 탄환을 고정된 Y값 (예: 0.5)에서 생성
-            Vector3 spawnPosition = new Vector3(transform.position.x, 0.5f, transform.position.z);
-
-            GameObject bullet = Instantiate(bulletPrefab, spawnPosition, Quaternion.identity);
+            // 발사 위치에서 총알 생성
+            GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
             Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
 
-            bulletRb.useGravity = false; // 중력 영향 제거
-
-            // 발사 방향에서 Y축 제거하고 일정한 높이에서만 이동
-            direction.y = 0;
-            bulletRb.velocity = direction.normalized * bulletSpeed;
+            if (bulletRb != null)
+            {
+                bulletRb.useGravity = false; // 중력 제거
+                bulletRb.velocity = direction.normalized * bulletSpeed; // 속도 설정
+            }
         }
     }
 }

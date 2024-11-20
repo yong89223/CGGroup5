@@ -110,6 +110,7 @@ public class GameManager : MonoBehaviour
 
     public void ClearButtonClick()
     {
+        RestartGame();
         // 현재 스테이지 인덱스 가져오기
         int currentStageIndex = DataManager.instance.nowPlayer.chapterIndex;
 
@@ -117,13 +118,35 @@ public class GameManager : MonoBehaviour
         UnlockNextStage(currentStageIndex);
 
         // Select 씬으로 이동
-        SceneManager.LoadScene("Select");
+        SceneManager.LoadScene("SelectScene");
+
+        SceneManager.sceneLoaded += OnSelectSceneLoaded;
     }
 
     public void MenuButtonClick()
     {
+        RestartGame();
         // Select 씬으로 돌아가기
-        SceneManager.LoadScene("Select");
+        SceneManager.LoadScene("SelectScene");
+
+        // Select 씬의 패널 상태 변경
+        SceneManager.sceneLoaded += OnSelectSceneLoaded;
+    }
+
+    private void OnSelectSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "SelectScene")
+        {
+            // SelectUIManager를 찾아서 패널 상태 변경
+            SceneManage uiManager = FindObjectOfType<SceneManage>();
+            if (uiManager != null)
+            {
+                uiManager.ActivateSelectPanel();
+            }
+
+            // 이벤트 구독 해제
+            SceneManager.sceneLoaded -= OnSelectSceneLoaded;
+        }
     }
 
     private void UnlockNextStage(int currentStageIndex)

@@ -51,4 +51,5 @@ public class SelectUIManager : MonoBehaviour
         DataManager.instance?.ClearLobbyUI();
         UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
     }
+    
 }
