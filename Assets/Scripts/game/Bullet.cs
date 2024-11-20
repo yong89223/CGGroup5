@@ -2,6 +2,7 @@ using UnityEngine;
 using System;
 public class Bullet : MonoBehaviour
 {
+    public int playerDamage = 20 + DataManager.instance.nowPlayer.inventory.items.Find(item => item.id == DataManager.instance.nowPlayer.item).damage;
     public int damage = 10;
     private void OnCollisionEnter(Collision collision)
     {
@@ -30,7 +31,7 @@ public class Bullet : MonoBehaviour
             Health enemyHealth = collision.gameObject.GetComponent<Health>();
             if (enemyHealth != null)
             {
-                enemyHealth.TakeDamage(damage); // 적에게 데미지 입힘
+                enemyHealth.TakeDamage(playerDamage); // 적에게 데미지 입힘
             }
 
             Destroy(gameObject); // 탄환 파괴

@@ -97,7 +97,7 @@ public class DataManager : MonoBehaviour
     {
         nowPlayer.name = username;
         nowPlayer.coin = 100;
-        nowPlayer.item = -1;
+        nowPlayer.item = 0;
         nowPlayer.chapterIndex = 0;
         nowPlayer.maxChapterIndex = 0;
 
@@ -105,7 +105,8 @@ public class DataManager : MonoBehaviour
         {
             nowPlayer.isChapterUnlock[i] = false;
         }
-        nowPlayer.isChapterUnlock[0] = true;
+        nowPlayer.isChapterUnlock[0] = true; //튜토리얼 언락
+        nowPlayer.isChapterUnlock[1] = true; //1스테이지 언락
 
         InitializeItems();
         SaveData(username);
@@ -115,6 +116,7 @@ public class DataManager : MonoBehaviour
 
     void InitializeItems()
     {
+        nowPlayer.inventory.items.Add(new Item { id = 0, name = "기본 장비", isItemUnlock = true, damage = 0, hp = 0 });
         nowPlayer.inventory.items.Add(new Item { id = 1, name = "체력의 팔찌", isItemUnlock = false, damage = 0, hp = 20 });
         nowPlayer.inventory.items.Add(new Item { id = 2, name = "체력의 모자", isItemUnlock = false, damage = 0, hp = 40 });
         nowPlayer.inventory.items.Add(new Item { id = 3, name = "공격의 팔찌", isItemUnlock = false, damage = 20, hp = 0 });
@@ -122,14 +124,14 @@ public class DataManager : MonoBehaviour
         nowPlayer.inventory.items.Add(new Item { id = 5, name = "궁극의 모자", isItemUnlock = false, damage = 30, hp = 30 });
     }
 
-    void SaveData(string username) //로컬에 플레이어 데이터 저장
+    public void SaveData(string username) //로컬에 플레이어 데이터 저장
     {
         string data = JsonUtility.ToJson(nowPlayer);
 
         File.WriteAllText(path + username, data);
     }
 
-    void LoadData(string username) //로컬에 저장된 플레이어 정보 불러오기
+    public void LoadData(string username) //로컬에 저장된 플레이어 정보 불러오기
     {
         string data = File.ReadAllText(path + username);
         nowPlayer = JsonUtility.FromJson<PlayerData>(data);

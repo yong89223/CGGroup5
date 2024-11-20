@@ -3,7 +3,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemyPrefab; // 积己且 利 橇府普
-    public float spawnInterval = 5f; // 利 积己 林扁
+    public float spawnInterval = 20f - DataManager.instance.nowPlayer.chapterIndex; // 利 积己 林扁
     public Vector3 mapSize = new Vector3(28, 0, 28); // 甘狼 农扁 (X, Z 绵 农扁)
     private float spawnTimer; // 积己 鸥捞赣
 

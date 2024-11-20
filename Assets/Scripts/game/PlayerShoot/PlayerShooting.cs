@@ -6,7 +6,7 @@ public class PlayerShooting : MonoBehaviour
 {
     public static event Action<Vector3> OnShoot; // 탄환 발사 이벤트
     public bool shootCooltime = true;
-    public float x = 5.0f;
+    public float x = 3.0f;
     void Update()
     {
         if (Input.GetMouseButtonDown(0) && shootCooltime)

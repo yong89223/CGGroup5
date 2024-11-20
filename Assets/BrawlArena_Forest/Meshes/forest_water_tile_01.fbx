@@ -1,0 +1,411 @@
+; FBX 6.1.0 project file
+; Created by Blender FBX Exporter
+; for support mail: ideasman42@gmail.com
+; ----------------------------------------------------
+
+FBXHeaderExtension:  {
+	FBXHeaderVersion: 1003
+	FBXVersion: 6100
+	CreationTimeStamp:  {
+		Version: 1000
+		Year: 2023
+		Month: 01
+		Day: 16
+		Hour: 21
+		Minute: 50
+		Second: 58
+		Millisecond: 0
+	}
+	Creator: "FBX SDK/FBX Plugins build 20070228"
+	OtherFlags:  {
+		FlagPLE: 0
+	}
+}
+CreationTime: "2023-01-16 21:50:58:000"
+Creator: "Blender version 2.79 (sub 0)"
+
+; Object definitions
+;------------------------------------------------------------------
+
+Definitions:  {
+	Version: 100
+	Count: 5
+	ObjectType: "Model" {
+		Count: 1
+	}
+	ObjectType: "Geometry" {
+		Count: 1
+	}
+	ObjectType: "Material" {
+		Count: 1
+	}
+	ObjectType: "Texture" {
+		Count: 1
+	}
+	ObjectType: "Video" {
+		Count: 1
+	}
+	ObjectType: "Pose" {
+		Count: 1
+	}
+	ObjectType: "GlobalSettings" {
+		Count: 1
+	}
+}
+
+; Object properties
+;------------------------------------------------------------------
+
+Objects:  {
+	Model: "Model::forest_water_tile_01", "Mesh" {
+		Version: 232
+		Properties60:  {
+			Property: "QuaternionInterpolate", "bool", "",0
+			Property: "Visibility", "Visibility", "A+",1
+			Property: "Lcl Translation", "Lcl Translation", "A+",0.000000000000000,0.000000000000000,0.000000000000000
+			Property: "Lcl Rotation", "Lcl Rotation", "A+",0.000000000000000,0.000000000000000,0.000000000000000
+			Property: "Lcl Scaling", "Lcl Scaling", "A+",1.000000000000000,1.000000000000000,1.000000000000000
+			Property: "RotationOffset", "Vector3D", "",0,0,0
+			Property: "RotationPivot", "Vector3D", "",0,0,0
+			Property: "ScalingOffset", "Vector3D", "",0,0,0
+			Property: "ScalingPivot", "Vector3D", "",0,0,0
+			Property: "TranslationActive", "bool", "",0
+			Property: "TranslationMin", "Vector3D", "",0,0,0
+			Property: "TranslationMax", "Vector3D", "",0,0,0
+			Property: "TranslationMinX", "bool", "",0
+			Property: "TranslationMinY", "bool", "",0
+			Property: "TranslationMinZ", "bool", "",0
+			Property: "TranslationMaxX", "bool", "",0
+			Property: "TranslationMaxY", "bool", "",0
+			Property: "TranslationMaxZ", "bool", "",0
+			Property: "RotationOrder", "enum", "",0
+			Property: "RotationSpaceForLimitOnly", "bool", "",0
+			Property: "AxisLen", "double", "",10
+			Property: "PreRotation", "Vector3D", "",0,0,0
+			Property: "PostRotation", "Vector3D", "",0,0,0
+			Property: "RotationActive", "bool", "",0
+			Property: "RotationMin", "Vector3D", "",0,0,0
+			Property: "RotationMax", "Vector3D", "",0,0,0
+			Property: "RotationMinX", "bool", "",0
+			Property: "RotationMinY", "bool", "",0
+			Property: "RotationMinZ", "bool", "",0
+			Property: "RotationMaxX", "bool", "",0
+			Property: "RotationMaxY", "bool", "",0
+			Property: "RotationMaxZ", "bool", "",0
+			Property: "RotationStiffnessX", "double", "",0
+			Property: "RotationStiffnessY", "double", "",0
+			Property: "RotationStiffnessZ", "double", "",0
+			Property: "MinDampRangeX", "double", "",0
+			Property: "MinDampRangeY", "double", "",0
+			Property: "MinDampRangeZ", "double", "",0
+			Property: "MaxDampRangeX", "double", "",0
+			Property: "MaxDampRangeY", "double", "",0
+			Property: "MaxDampRangeZ", "double", "",0
+			Property: "MinDampStrengthX", "double", "",0
+			Property: "MinDampStrengthY", "double", "",0
+			Property: "MinDampStrengthZ", "double", "",0
+			Property: "MaxDampStrengthX", "double", "",0
+			Property: "MaxDampStrengthY", "double", "",0
+			Property: "MaxDampStrengthZ", "double", "",0
+			Property: "PreferedAngleX", "double", "",0
+			Property: "PreferedAngleY", "double", "",0
+			Property: "PreferedAngleZ", "double", "",0
+			Property: "InheritType", "enum", "",0
+			Property: "ScalingActive", "bool", "",0
+			Property: "ScalingMin", "Vector3D", "",1,1,1
+			Property: "ScalingMax", "Vector3D", "",1,1,1
+			Property: "ScalingMinX", "bool", "",0
+			Property: "ScalingMinY", "bool", "",0
+			Property: "ScalingMinZ", "bool", "",0
+			Property: "ScalingMaxX", "bool", "",0
+			Property: "ScalingMaxY", "bool", "",0
+			Property: "ScalingMaxZ", "bool", "",0
+			Property: "GeometricTranslation", "Vector3D", "",0,0,0
+			Property: "GeometricRotation", "Vector3D", "",0,0,0
+			Property: "GeometricScaling", "Vector3D", "",1,1,1
+			Property: "LookAtProperty", "object", ""
+			Property: "UpVectorProperty", "object", ""
+			Property: "Show", "bool", "",1
+			Property: "NegativePercentShapeSupport", "bool", "",1
+			Property: "DefaultAttributeIndex", "int", "",0
+			Property: "Color", "Color", "A",0.8,0.8,0.8
+			Property: "Size", "double", "",100
+			Property: "Look", "enum", "",1
+		}
+		MultiLayer: 0
+		MultiTake: 1
+		Shading: Y
+		Culling: "CullingOff"
+		Vertices: -1.000000,0.000000,1.000000,-1.000000,0.138876,1.000000,-0.766667,0.138876,1.000000,-0.666667,0.075891,1.000000,
+		          0.766667,0.138876,1.000000,0.666667,0.075891,1.000000,1.000000,-0.000000,-1.000000,1.000000,0.138876,-1.000000,
+		          1.000000,0.138876,-0.766667,1.000000,0.075891,-0.666667,1.000000,0.138876,1.000000,1.000000,0.138876,0.766667,
+		          1.000000,0.075891,0.666667,-0.952166,-0.000000,-0.825700,-0.952166,0.138876,-0.825700,-0.667669,0.138876,-0.766667,
+		          -0.666667,0.075891,-0.599759,-1.000000,0.138876,-0.666667,-0.766667,0.138876,-0.666769,-1.000000,-0.000000,-0.666667,
+		          0.804121,0.138876,0.805790,-0.666667,-0.000000,-1.000000,0.890000,0.075891,0.666667,-0.666667,0.138876,-1.000000,
+		          -0.618700,0.075891,-0.666667,-0.727291,0.138876,-0.734450,-0.822060,-0.000000,-0.965367,-0.822060,0.138876,-0.965367,
+		          0.890000,0.138876,0.766667,1.000000,0.075891,1.000000,-0.646979,0.075891,-0.641609,0.766667,0.138876,0.900000,
+		          0.666667,0.075891,0.900000,0.726182,0.075891,0.745319
+		PolygonVertexIndex: 25,18,16,-31,16,18,2,-4,23,7,6,-22,1,2,18,-18,1,17,19,-1,27,14,-26,26,27,23,-22,13,14,27,-27,19,
+		                    17,14,-14,29,16,-4,8,15,24,-10,25,15,23,-28,17,18,25,-15,15,8,7,-24,24,15,25,-31,5,4,31,-33,4,10,
+		                    -32,11,12,22,-29,10,11,-29,20,33,32,-32,20,28,22,-34,28,20,-11,31,10,-21,16,29,-31,30,29,-25,24,29,-10
+		GeometryVersion: 124
+		LayerElementNormal: 0 {
+			Version: 101
+			Name: ""
+			MappingInformationType: "ByPolygonVertex"
+			ReferenceInformationType: "Direct"
+			Normals: 0.337794,0.886035,0.317548,0.465898,0.874122,0.137295,0.489287,0.867222,0.092322,0.349248,0.886123,0.304650,
+			         0.489287,0.867222,0.092322,0.465898,0.874122,0.137295,0.532948,0.846148,-0.000000,0.532948,0.846148,-0.000000,
+			         -0.109427,0.000000,-0.993995,0.000000,0.000000,-1.000000,0.000000,0.000000,-1.000000,-0.109427,0.000000,-0.993995,
+			         -0.000000,1.000000,-0.000000,-0.000000,1.000000,-0.000000,-0.000000,1.000000,-0.000000,-0.000000,1.000000,-0.000000,
+			         -1.000000,0.000000,0.000000,-0.989349,0.000000,-0.145565,-0.989349,0.000000,-0.145565,-1.000000,0.000000,0.000000,
+			         0.000000,1.000000,-0.000000,0.000000,1.000000,0.000000,-0.000000,1.000000,-0.000000,-0.496928,0.000000,-0.867792,
+			         -0.496928,0.000000,-0.867792,-0.109427,0.000000,-0.993995,-0.109427,0.000000,-0.993995,-0.867285,0.000000,-0.497811,
+			         -0.867285,0.000000,-0.497811,-0.496928,0.000000,-0.867792,-0.496928,0.000000,-0.867792,-0.989349,0.000000,-0.145565,
+			         -0.989349,0.000000,-0.145565,-0.867285,0.000000,-0.497811,-0.867285,0.000000,-0.497811,-0.000000,1.000000,-0.000000,
+			         -0.000000,1.000000,-0.000000,-0.000000,1.000000,-0.000000,0.000000,0.846148,0.532948,0.148950,0.874056,0.462427,
+			         0.126071,0.871323,0.474238,0.000000,0.846148,0.532948,-0.000000,1.000000,-0.000000,-0.000000,1.000000,-0.000000,
+			         -0.000000,1.000000,-0.000000,0.000000,1.000000,-0.000000,-0.000000,1.000000,-0.000000,-0.000000,1.000000,-0.000000,
+			         -0.000000,1.000000,-0.000000,0.000000,1.000000,0.000000,-0.000000,1.000000,-0.000000,0.000000,1.000000,-0.000000,
+			         0.000000,1.000000,-0.000000,-0.000000,1.000000,-0.000000,0.126071,0.871323,0.474238,0.148950,0.874056,0.462427,
+			         0.337794,0.886035,0.317548,0.349248,0.886123,0.304650,-0.532949,0.846148,0.000000,-0.532949,0.846148,0.000000,
+			         -0.528126,0.841880,-0.110996,-0.529510,0.843454,-0.090574,0.000000,1.000000,0.000000,0.000000,1.000000,-0.000000,
+			         0.000000,1.000000,-0.000000,0.000000,0.846147,-0.532949,0.000000,0.846147,-0.532949,-0.107178,0.839853,-0.532128,
+			         -0.136685,0.836393,-0.530815,0.000000,1.000000,-0.000000,0.000000,1.000000,0.000000,-0.000000,1.000000,-0.000000,
+			         -0.385200,0.842118,-0.377436,-0.399159,0.842788,-0.361083,-0.529510,0.843454,-0.090574,-0.528126,0.841880,-0.110996,
+			         -0.385200,0.842118,-0.377436,-0.136685,0.836393,-0.530815,-0.107178,0.839853,-0.532128,-0.399159,0.842788,-0.361083,
+			         -0.000000,1.000000,-0.000000,0.000000,1.000000,-0.000000,0.000000,1.000000,-0.000000,0.000000,1.000000,-0.000000,
+			         0.000000,1.000000,-0.000000,0.000000,1.000000,-0.000000,-0.000000,1.000000,-0.000000,-0.000000,1.000000,-0.000000,
+			         -0.000000,1.000000,0.000000,-0.000000,1.000000,0.000000,-0.000000,1.000000,-0.000000,-0.000000,1.000000,-0.000000,
+			         -0.000000,1.000000,-0.000000,-0.000000,1.000000,-0.000000,-0.000000,1.000000,-0.000000
+		}
+		LayerElementUV: 0 {
+			Version: 101
+			Name: "UVMap"
+			MappingInformationType: "ByPolygonVertex"
+			ReferenceInformationType: "IndexToDirect"
+			UV: 0.645630,0.780840,0.392513,0.778381,0.645252,0.819758,0.392135,0.817300,0.694432,0.780598,0.669791,0.783581,
+			    0.598419,0.573051,0.303230,0.264822,0.598766,0.265155,0.670474,0.820003,0.671997,0.719368,0.664469,0.718492,
+			    0.677472,0.747344,0.410423,0.665765,0.664106,0.746732,0.404296,0.690448,0.715472,0.771123,0.978823,0.734427,
+			    0.985826,0.775582,0.726902,0.811275,0.290539,0.573081,0.713378,0.889085,0.852692,0.831993,0.857455,0.922437,
+			    0.852143,0.983282,0.808367,0.978555,0.816514,0.921245,0.785842,0.908229,0.744038,0.945569,0.295494,0.268450,
+			    0.290511,0.274062,0.700799,0.817477,0.394963,0.727976,0.922327,0.623479,0.688357,0.743376,0.678080,0.718125,
+			    0.909515,0.596800,0.941812,0.664037,0.705641,0.851857,0.762721,0.839994,0.768482,0.876744
+			UVIndex: 12,14,11,10,11,14,15,13,16,17,18,19,32,15,14,0,1,0,2,3,4,5,12,31,4,16,19,9,5,4,31,2,0,5,9,6,7,8,33,34,35,36,12,34,16,4,0,14,12,5,34,33,37,16,35,34,12,10,38,39,40,21,39,22,
+			         40,23,24,25,26,22,23,26,27,28,21,40,27,26,25,28,26,27,22,40,22,27,7,6,29,29,6,30,30,6,20
+		}
+		LayerElementTexture: 0 {
+			Version: 101
+			Name: "UVMap"
+			MappingInformationType: "AllSame"
+			ReferenceInformationType: "IndexToDirect"
+			BlendMode: "Translucent"
+			TextureAlpha: 1
+			TextureId: 0
+		}
+		LayerElementMaterial: 0 {
+			Version: 101
+			Name: ""
+			MappingInformationType: "AllSame"
+			ReferenceInformationType: "IndexToDirect"
+			Materials: 0
+		}
+		Layer: 0 {
+			Version: 100
+			LayerElement:  {
+				Type: "LayerElementNormal"
+				TypedIndex: 0
+			}
+			LayerElement:  {
+				Type: "LayerElementUV"
+				TypedIndex: 0
+			}
+			LayerElement:  {
+				Type: "LayerElementTexture"
+				TypedIndex: 0
+			}
+			LayerElement:  {
+				Type: "LayerElementMaterial"
+				TypedIndex: 0
+			}
+		}
+	}
+	Material: "Material::water_tile_01m__forest_water_01a_dif_png", "" {
+		Version: 102
+		ShadingModel: "lambert"
+		MultiLayer: 0
+		Properties60:  {
+			Property: "ShadingModel", "KString", "", "Lambert"
+			Property: "MultiLayer", "bool", "",0
+			Property: "EmissiveColor", "ColorRGB", "",0.8000,0.8000,0.8000
+			Property: "EmissiveFactor", "double", "",0.0000
+			Property: "AmbientColor", "ColorRGB", "",1.0000,1.0000,1.0000
+			Property: "AmbientFactor", "double", "",1.0000
+			Property: "DiffuseColor", "ColorRGB", "",0.8000,0.8000,0.8000
+			Property: "DiffuseFactor", "double", "",0.8000
+			Property: "Bump", "Vector3D", "",0,0,0
+			Property: "TransparentColor", "ColorRGB", "",1,1,1
+			Property: "TransparencyFactor", "double", "",0.0000
+			Property: "SpecularColor", "ColorRGB", "",1.0000,1.0000,1.0000
+			Property: "SpecularFactor", "double", "",0.5000
+			Property: "ShininessExponent", "double", "",12.3
+			Property: "ReflectionColor", "ColorRGB", "",0,0,0
+			Property: "ReflectionFactor", "double", "",1
+			Property: "Emissive", "ColorRGB", "",0,0,0
+			Property: "Ambient", "ColorRGB", "",1.0,1.0,1.0
+			Property: "Diffuse", "ColorRGB", "",0.8,0.8,0.8
+			Property: "Specular", "ColorRGB", "",1.0,1.0,1.0
+			Property: "Shininess", "double", "",12.3
+			Property: "Opacity", "double", "",1.0
+			Property: "Reflectivity", "double", "",0
+		}
+	}
+	Video: "Video::forest_water_01a_dif_png", "Clip" {
+		Type: "Clip"
+		Properties60:  {
+			Property: "FrameRate", "double", "",0
+			Property: "LastFrame", "int", "",0
+			Property: "Width", "int", "",0
+			Property: "Height", "int", "",0
+			Property: "Path", "charptr", "", "forest_water_01a_dif.png"
+			Property: "StartFrame", "int", "",0
+			Property: "StopFrame", "int", "",0
+			Property: "PlaySpeed", "double", "",1
+			Property: "Offset", "KTime", "",0
+			Property: "InterlaceMode", "enum", "",0
+			Property: "FreeRunning", "bool", "",0
+			Property: "Loop", "bool", "",0
+			Property: "AccessMode", "enum", "",0
+		}
+		UseMipMap: 0
+		Filename: "forest_water_01a_dif.png"
+		RelativeFilename: "C:\from ssd\4Work\WIP8\ASSETS YES\BrawlArena\ForestArena\forest_water_01a_dif.png"
+	}
+	Texture: "Texture::forest_water_01a_dif_png", "TextureVideoClip" {
+		Type: "TextureVideoClip"
+		Version: 202
+		TextureName: "Texture::forest_water_01a_dif_png"
+		Properties60:  {
+			Property: "Translation", "Vector", "A+",0,0,0
+			Property: "Rotation", "Vector", "A+",0,0,0
+			Property: "Scaling", "Vector", "A+",1,1,1
+			Property: "Texture alpha", "Number", "A+",0
+			Property: "TextureTypeUse", "enum", "",0
+			Property: "CurrentTextureBlendMode", "enum", "",1
+			Property: "UseMaterial", "bool", "",0
+			Property: "UseMipMap", "bool", "",0
+			Property: "CurrentMappingType", "enum", "",0
+			Property: "UVSwap", "bool", "",0
+			Property: "WrapModeU", "enum", "",0
+			Property: "WrapModeV", "enum", "",0
+			Property: "TextureRotationPivot", "Vector3D", "",0,0,0
+			Property: "TextureScalingPivot", "Vector3D", "",0,0,0
+			Property: "VideoProperty", "object", ""
+		}
+		Media: "Video::forest_water_01a_dif_png"
+		FileName: "forest_water_01a_dif.png"
+		RelativeFilename: "C:\from ssd\4Work\WIP8\ASSETS YES\BrawlArena\ForestArena\forest_water_01a_dif.png"
+		ModelUVTranslation: 0,0
+		ModelUVScaling: 1,1
+		Texture_Alpha_Source: "None"
+		Cropping: 0,0,0,0
+	}
+	Pose: "Pose::BIND_POSES", "BindPose" {
+		Type: "BindPose"
+		Version: 100
+		Properties60:  {
+		}
+		NbPoseNodes: 1
+		PoseNode:  {
+			Node: "Model::forest_water_tile_01"
+			Matrix: 0.000000075497901,0.000000000000000,-1.000000000000000,0.000000000000000,-1.000000000000000,0.000000000000000,-0.000000075497901,0.000000000000000,0.000000000000000,1.000000000000000,0.000000000000000,0.000000000000000,0.000000000000000,0.000000000000000,0.000000000000000,1.000000000000000
+		}
+	}
+	GlobalSettings:  {
+		Version: 1000
+		Properties60:  {
+			Property: "UpAxis", "int", "",1
+			Property: "UpAxisSign", "int", "",1
+			Property: "FrontAxis", "int", "",2
+			Property: "FrontAxisSign", "int", "",1
+			Property: "CoordAxis", "int", "",0
+			Property: "CoordAxisSign", "int", "",1
+			Property: "UnitScaleFactor", "double", "",1
+		}
+	}
+}
+
+; Object relations
+;------------------------------------------------------------------
+
+Relations:  {
+	Model: "Model::forest_water_tile_01", "Mesh" {
+	}
+	Model: "Model::Producer Perspective", "Camera" {
+	}
+	Model: "Model::Producer Top", "Camera" {
+	}
+	Model: "Model::Producer Bottom", "Camera" {
+	}
+	Model: "Model::Producer Front", "Camera" {
+	}
+	Model: "Model::Producer Back", "Camera" {
+	}
+	Model: "Model::Producer Right", "Camera" {
+	}
+	Model: "Model::Producer Left", "Camera" {
+	}
+	Model: "Model::Camera Switcher", "CameraSwitcher" {
+	}
+	Material: "Material::water_tile_01m__forest_water_01a_dif_png", "" {
+	}
+	Texture: "Texture::forest_water_01a_dif_png", "TextureVideoClip" {
+	}
+	Video: "Video::forest_water_01a_dif_png", "Clip" {
+	}
+}
+
+; Object connections
+;------------------------------------------------------------------
+
+Connections:  {
+	Connect: "OO", "Model::forest_water_tile_01", "Model::Scene"
+	Connect: "OO", "Material::water_tile_01m__forest_water_01a_dif_png", "Model::forest_water_tile_01"
+	Connect: "OO", "Texture::forest_water_01a_dif_png", "Model::forest_water_tile_01"
+	Connect: "OO", "Video::forest_water_01a_dif_png", "Texture::forest_water_01a_dif_png"
+}
+;Takes and animation section
+;----------------------------------------------------
+
+Takes:  {
+	Current: ""
+}
+;Version 5 settings
+;------------------------------------------------------------------
+
+Version5:  {
+	AmbientRenderSettings:  {
+		Version: 101
+		AmbientLightColor: 0.0,0.0,0.0,0
+	}
+	FogOptions:  {
+		FogEnable: 0
+		FogMode: 0
+		FogDensity: 0.000
+		FogStart: 5.000
+		FogEnd: 25.000
+		FogColor: 0.1,0.1,0.1,1
+	}
+	Settings:  {
+		FrameRate: "24"
+		TimeFormat: 1
+		SnapOnFrames: 0
+		ReferenceTimeIndex: -1
+		TimeLineStartTime: 0
+		TimeLineStopTime: 479181389250
+	}
+	RendererSetting:  {
+		DefaultCamera: "Producer Perspective"
+		DefaultViewingMode: 0
+	}
+}
