@@ -35,7 +35,7 @@ public class DataManager : MonoBehaviour
 {
 
     public static DataManager instance;
-
+    public Button unlockItemButton; // 해금 버튼
     public PlayerData nowPlayer = new PlayerData();
 
 
@@ -64,6 +64,7 @@ public class DataManager : MonoBehaviour
     void Start()
     {
         usernameSubmitButton.onClick.AddListener(OnNicknameSubmit);
+        unlockItemButton.onClick.AddListener(UnlockAndEquipRandomItem);
     }
 
     // Update is called once per frame
@@ -148,6 +149,35 @@ public class DataManager : MonoBehaviour
         {
             Destroy(selectUI);
             selectUI = null;
+        }
+    }
+
+    public void UnlockAndEquipRandomItem()
+    {
+        // 해금되지 않은 아이템 필터링
+        List<Item> lockedItems = nowPlayer.inventory.items.FindAll(item => !item.isItemUnlock);
+
+        if (lockedItems.Count > 0)
+        {
+            // 무작위 아이템 선택
+            int randomIndex = Random.Range(0, lockedItems.Count);
+            Item selectedItem = lockedItems[randomIndex];
+
+            // 아이템 해금
+            selectedItem.isItemUnlock = true;
+            Debug.Log($"아이템 '{selectedItem.name}'이(가) 해금되었습니다!");
+
+            // 아이템 장착
+            nowPlayer.item = selectedItem.id;
+            Debug.Log($"아이템 '{selectedItem.name}'이(가) 장착되었습니다!");
+
+            // 데이터 저장
+            SaveData(nowPlayer.name);
+
+        }
+        else
+        {
+            Debug.Log("해금할 아이템이 없습니다!");
         }
     }
 

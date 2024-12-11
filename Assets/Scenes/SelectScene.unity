@@ -3971,6 +3971,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f01625e69dc90544aaf64c50db4f6b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unlockItemButton: {fileID: 1380247125}
   usernameInputField: {fileID: 1073973356}
   usernameSubmitButton: {fileID: 1204167558}
   usernameUI: {fileID: 1664010337}
@@ -22978,7 +22979,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1259394545
 RectTransform:
   m_ObjectHideFlags: 0
