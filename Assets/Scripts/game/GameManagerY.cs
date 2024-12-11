@@ -19,7 +19,12 @@ public class GameManagerY : MonoBehaviour
     void Start()
     {
         // 플레이어 Health 컴포넌트 참조
-        playerHealth = FindObjectOfType<Health>();
+        GameObject player = GameObject.FindWithTag("Player");
+        if (player != null)
+        {
+            playerHealth = player.GetComponent<Health>();
+        }
+
         if (playerHealth == null || !playerHealth.isPlayer)
         {
             Debug.LogError("플레이어 Health 컴포넌트를 찾을 수 없습니다!");
@@ -34,7 +39,7 @@ public class GameManagerY : MonoBehaviour
         // 체력 변화 이벤트 구독
         Health.OnPlayerHealthChanged += HandlePlayerHealthChanged;
 
-        // 3초 준비 타이머 시작
+        // 준비 타이머 시작
         StartCoroutine(StartPreparation());
     }
 
@@ -110,57 +115,58 @@ public class GameManagerY : MonoBehaviour
 
     public void ClearButtonClick()
     {
-        RestartGame();
-        // 현재 스테이지 인덱스 가져오기
-        int currentStageIndex = DataManager.instance.nowPlayer.chapterIndex;
-
-        // 다음 스테이지 언락
-        UnlockNextStage(currentStageIndex);
-
-        // Select 씬으로 이동
-        SceneManager.LoadScene("SelectScene");
-
+        Time.timeScale = 1; // 씬 전환 전에 타임스케일 복구
+        SceneManager.sceneLoaded -= OnSelectSceneLoaded; // 중복 구독 방지
         SceneManager.sceneLoaded += OnSelectSceneLoaded;
+
+        UnlockNextStage(DataManager.instance.nowPlayer.chapterIndex);
+        SceneManager.LoadScene("SelectScene");
     }
 
     public void MenuButtonClick()
     {
-        RestartGame();
-        // Select 씬으로 돌아가기
-        SceneManager.LoadScene("SelectScene");
-
-        // Select 씬의 패널 상태 변경
+        Time.timeScale = 1; // 씬 전환 전에 타임스케일 복구
+        SceneManager.sceneLoaded -= OnSelectSceneLoaded; // 중복 구독 방지
         SceneManager.sceneLoaded += OnSelectSceneLoaded;
+
+        SceneManager.LoadScene("SelectScene");
     }
 
     private void OnSelectSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if (scene.name == "SelectScene")
         {
-            // SelectUIManager를 찾아서 패널 상태 변경
             SceneManage uiManager = FindObjectOfType<SceneManage>();
             if (uiManager != null)
             {
                 uiManager.ActivateSelectPanel();
             }
+            else
+            {
+                Debug.LogWarning("SelectScene에서 SceneManage를 찾을 수 없습니다!");
+            }
 
-            // 이벤트 구독 해제
-            SceneManager.sceneLoaded -= OnSelectSceneLoaded;
+            SceneManager.sceneLoaded -= OnSelectSceneLoaded; // 이벤트 해제
         }
     }
 
     private void UnlockNextStage(int currentStageIndex)
     {
-        // 다음 스테이지 인덱스 계산
         int nextStageIndex = currentStageIndex + 1;
 
-        // 최대 인덱스가 넘어가지 않도록 제한
         if (nextStageIndex < DataManager.instance.nowPlayer.isChapterUnlock.Length)
         {
             DataManager.instance.nowPlayer.isChapterUnlock[nextStageIndex] = true;
-
-            // 저장 (데이터를 파일에 저장)
             DataManager.instance.SaveData(DataManager.instance.nowPlayer.name);
         }
+        else
+        {
+            Debug.LogWarning("모든 스테이지가 이미 해금되었습니다!");
+        }
+    }
+
+    private void OnDestroy()
+    {
+        Health.OnPlayerHealthChanged -= HandlePlayerHealthChanged;
     }
 }

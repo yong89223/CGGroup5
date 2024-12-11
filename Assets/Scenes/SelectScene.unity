@@ -3956,59 +3956,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 259699524}
   m_CullTransparentMesh: 1
---- !u!1 &266965471
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 266965473}
-  - component: {fileID: 266965472}
-  m_Layer: 0
-  m_Name: DataManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &266965472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 266965471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f01625e69dc90544aaf64c50db4f6b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  unlockItemButton: {fileID: 1874167131}
-  unlockItemButton2: {fileID: 1907439223}
-  unlockItemButton3: {fileID: 815233839}
-  unlockItemButton4: {fileID: 406736313}
-  usernameInputField: {fileID: 1073973356}
-  usernameSubmitButton: {fileID: 1204167558}
-  usernameUI: {fileID: 1664010337}
-  lobbyUI: {fileID: 1602726379}
-  selectUI: {fileID: 37192133}
---- !u!4 &266965473
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 266965471}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 57.136562, y: -155.9428, z: 66.312744}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &267421241
 GameObject:
   m_ObjectHideFlags: 0
@@ -6590,7 +6537,7 @@ GameObject:
   - component: {fileID: 406736313}
   - component: {fileID: 406736316}
   m_Layer: 5
-  m_Name: DiamondButton
+  m_Name: UnlockItemButton4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6848,6 +6795,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1728227289}
+        m_TargetAssemblyTypeName: ButtonFind, Assembly-CSharp
+        m_MethodName: FindAndInitializeButtons
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -14857,7 +14816,7 @@ GameObject:
   - component: {fileID: 815233839}
   - component: {fileID: 815233842}
   m_Layer: 5
-  m_Name: GoldButton
+  m_Name: UnlockItemButton3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31837,6 +31796,7 @@ GameObject:
   - component: {fileID: 1728227287}
   - component: {fileID: 1728227286}
   - component: {fileID: 1728227288}
+  - component: {fileID: 1728227289}
   m_Layer: 5
   m_Name: StoreScreen
   m_TagString: Untagged
@@ -31930,6 +31890,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UsernameBox: {fileID: 668764916}
   CoinBox: {fileID: 1438519988}
+--- !u!114 &1728227289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728227278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b151082b038538642b102b7f96cd89b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unlockItemButton: {fileID: 0}
+  unlockItemButton2: {fileID: 0}
+  unlockItemButton3: {fileID: 0}
+  unlockItemButton4: {fileID: 0}
 --- !u!1 &1728893908
 GameObject:
   m_ObjectHideFlags: 0
@@ -34439,7 +34415,7 @@ GameObject:
   - component: {fileID: 1874167131}
   - component: {fileID: 1874167134}
   m_Layer: 5
-  m_Name: CoperButton
+  m_Name: UnlockItemButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35133,7 +35109,7 @@ GameObject:
   - component: {fileID: 1907439223}
   - component: {fileID: 1907439226}
   m_Layer: 5
-  m_Name: SilverButton
+  m_Name: UnlockItemButton2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37068,7 +37044,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2030219600}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -37080,7 +37056,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.000061035156, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2030219602
@@ -39145,6 +39121,55 @@ MonoBehaviour:
   cantOpenMessage: {fileID: 1725298924}
   itemCost: 1000
   gachaItems: []
+--- !u!1 &2131250673
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2131250675}
+  - component: {fileID: 2131250674}
+  m_Layer: 0
+  m_Name: DataManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2131250674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131250673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f01625e69dc90544aaf64c50db4f6b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  usernameInputField: {fileID: 1073973356}
+  usernameSubmitButton: {fileID: 1204167558}
+  usernameUI: {fileID: 1664010337}
+  lobbyUI: {fileID: 1602726379}
+  selectUI: {fileID: 37192133}
+--- !u!4 &2131250675
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131250673}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 101.20001, y: 970.16003, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2135430111
 GameObject:
   m_ObjectHideFlags: 0
@@ -39386,8 +39411,8 @@ CanvasRenderer:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 963194228}
   - {fileID: 705507995}
+  - {fileID: 963194228}
   - {fileID: 1392660989}
   - {fileID: 1880896995}
-  - {fileID: 266965473}
+  - {fileID: 2131250675}

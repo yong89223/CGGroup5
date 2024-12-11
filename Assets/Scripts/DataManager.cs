@@ -35,10 +35,6 @@ public class DataManager : MonoBehaviour
 {
 
     public static DataManager instance;
-    public Button unlockItemButton; // 해금 버튼
-    public Button unlockItemButton2; // 해금 버튼
-    public Button unlockItemButton3; // 해금 버튼
-    public Button unlockItemButton4; // 해금 버튼
     public PlayerData nowPlayer = new PlayerData();
 
 
@@ -51,27 +47,30 @@ public class DataManager : MonoBehaviour
 
     private void Awake()
     {
-        #region 싱글톤
+        #region Singleton
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(this.gameObject); // 현재 GameObject를 파괴하지 않음
         }
-        else if(instance != this)
+        else
         {
-            Destroy(instance.gameObject);
+            Destroy(gameObject);
+            return;
         }
-        DontDestroyOnLoad(this.gameObject);
+
         #endregion
         path = Application.persistentDataPath + "/";
     }
+
+    
+    
+
     void Start()
     {
         usernameSubmitButton.onClick.AddListener(OnNicknameSubmit);
-        unlockItemButton.onClick.AddListener(UnlockAndEquipRandomItem);
-        unlockItemButton2.onClick.AddListener(UnlockAndEquipRandomItem);
-        unlockItemButton3.onClick.AddListener(UnlockAndEquipRandomItem);
-        unlockItemButton4.onClick.AddListener(UnlockAndEquipRandomItem);
     }
+
 
     // Update is called once per frame
 
@@ -160,6 +159,13 @@ public class DataManager : MonoBehaviour
 
     public void UnlockAndEquipRandomItem()
     {
+        // 데이터 유효성 검사
+        if (nowPlayer == null || nowPlayer.inventory == null || nowPlayer.inventory.items == null)
+        {
+            Debug.LogError("Player inventory is not initialized!");
+            return;
+        }
+
         // 해금되지 않은 아이템 필터링
         List<Item> lockedItems = nowPlayer.inventory.items.FindAll(item => !item.isItemUnlock);
 
@@ -179,12 +185,13 @@ public class DataManager : MonoBehaviour
 
             // 데이터 저장
             SaveData(nowPlayer.name);
-
         }
         else
         {
             Debug.Log("해금할 아이템이 없습니다!");
         }
     }
+
+
 
 }
