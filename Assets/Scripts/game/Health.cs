@@ -47,6 +47,17 @@ public class Health : MonoBehaviour
         currentHealth -= damage;
         TriggerHealthChangedEvent();
 
+       
+    }
+
+    public void IncreaseHealth(int increasing)
+    {
+        if (currentHealth + increasing < baseHealth)
+            currentHealth += increasing;
+        else
+            currentHealth = baseHealth;
+        TriggerHealthChangedEvent();
+
         if (currentHealth <= 0)
         {
             HandleDeath();
