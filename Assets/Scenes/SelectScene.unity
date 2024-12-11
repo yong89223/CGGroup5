@@ -1591,7 +1591,9 @@ MonoBehaviour:
   coinBox: {fileID: 1438519988}
   cantOpenMessage: {fileID: 1725298924}
   itemCost: 100
-  gachaItems: []
+  gachaItems:
+  - itemImage: {fileID: 0}
+    probability: 100
 --- !u!1 &126311088
 GameObject:
   m_ObjectHideFlags: 0
@@ -3971,7 +3973,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f01625e69dc90544aaf64c50db4f6b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unlockItemButton: {fileID: 1380247125}
+  unlockItemButton: {fileID: 1874167131}
+  unlockItemButton2: {fileID: 1907439223}
+  unlockItemButton3: {fileID: 815233839}
+  unlockItemButton4: {fileID: 406736313}
   usernameInputField: {fileID: 1073973356}
   usernameSubmitButton: {fileID: 1204167558}
   usernameUI: {fileID: 1664010337}

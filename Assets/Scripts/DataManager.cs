@@ -36,6 +36,9 @@ public class DataManager : MonoBehaviour
 
     public static DataManager instance;
     public Button unlockItemButton; // 해금 버튼
+    public Button unlockItemButton2; // 해금 버튼
+    public Button unlockItemButton3; // 해금 버튼
+    public Button unlockItemButton4; // 해금 버튼
     public PlayerData nowPlayer = new PlayerData();
 
 
@@ -65,6 +68,9 @@ public class DataManager : MonoBehaviour
     {
         usernameSubmitButton.onClick.AddListener(OnNicknameSubmit);
         unlockItemButton.onClick.AddListener(UnlockAndEquipRandomItem);
+        unlockItemButton2.onClick.AddListener(UnlockAndEquipRandomItem);
+        unlockItemButton3.onClick.AddListener(UnlockAndEquipRandomItem);
+        unlockItemButton4.onClick.AddListener(UnlockAndEquipRandomItem);
     }
 
     // Update is called once per frame
@@ -117,12 +123,12 @@ public class DataManager : MonoBehaviour
 
     void InitializeItems()
     {
-        nowPlayer.inventory.items.Add(new Item { id = 0, name = "기본 장비", isItemUnlock = true, damage = 0, hp = 0 });
-        nowPlayer.inventory.items.Add(new Item { id = 1, name = "체력의 팔찌", isItemUnlock = false, damage = 0, hp = 20 });
-        nowPlayer.inventory.items.Add(new Item { id = 2, name = "체력의 모자", isItemUnlock = false, damage = 0, hp = 40 });
-        nowPlayer.inventory.items.Add(new Item { id = 3, name = "공격의 팔찌", isItemUnlock = false, damage = 20, hp = 0 });
-        nowPlayer.inventory.items.Add(new Item { id = 4, name = "공격의 모자", isItemUnlock = false, damage = 40, hp = 0 });
-        nowPlayer.inventory.items.Add(new Item { id = 5, name = "궁극의 모자", isItemUnlock = false, damage = 30, hp = 30 });
+        nowPlayer.inventory.items.Add(new Item { id = 0, name = "실드", isItemUnlock = true, damage = 0, hp = 0 });
+        nowPlayer.inventory.items.Add(new Item { id = 1, name = "실드2", isItemUnlock = false, damage = 0, hp = 20 });
+        nowPlayer.inventory.items.Add(new Item { id = 2, name = "실드3", isItemUnlock = false, damage = 0, hp = 30 });
+        nowPlayer.inventory.items.Add(new Item { id = 3, name = "실드4", isItemUnlock = false, damage = 10, hp = 40 });
+        nowPlayer.inventory.items.Add(new Item { id = 4, name = "실드5", isItemUnlock = false, damage = 20, hp = 50 });
+        nowPlayer.inventory.items.Add(new Item { id = 5, name = "실드6", isItemUnlock = false, damage = 30, hp = 60 });
     }
 
     public void SaveData(string username) //로컬에 플레이어 데이터 저장
