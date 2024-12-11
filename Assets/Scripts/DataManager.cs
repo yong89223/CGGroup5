@@ -96,7 +96,7 @@ public class DataManager : MonoBehaviour
     void Initialize(string username)
     {
         nowPlayer.name = username;
-        nowPlayer.coin = 100;
+        nowPlayer.coin = 5000;
         nowPlayer.item = 0;
         nowPlayer.chapterIndex = 0;
         nowPlayer.maxChapterIndex = 0;
