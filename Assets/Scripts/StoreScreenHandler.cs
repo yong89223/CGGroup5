@@ -14,6 +14,10 @@ public class StoreScreenHandler : MonoBehaviour
         {
             button.onClick.AddListener(CloseAllMenus);
         }
+        else
+        {
+            Debug.LogWarning("Button component not found on the StoreScreen object.");
+        }
     }
 
     public void CloseAllMenus()
@@ -22,18 +26,26 @@ public class StoreScreenHandler : MonoBehaviour
         if (ItemsMenuUI != null) ItemsMenuUI.SetActive(false);
         if (SkinsMenuUI != null) SkinsMenuUI.SetActive(false);
         
-        // OpenChestObject의 활성화된 자식만 비활성화
+        // OpenChestObject의 자식의 자식만 비활성화
         if (OpenChestObject != null)
         {
-            foreach (Transform child in OpenChestObject.transform)
+            DeactivateOnlyGrandchildren(OpenChestObject.transform);
+        }
+    }
+
+    // 자식의 자식만 비활성화하는 함수
+    private void DeactivateOnlyGrandchildren(Transform parent)
+    {
+        foreach (Transform child in parent)
+        {
+            // 자식의 자식들만 비활성화
+            foreach (Transform grandchild in child)
             {
-                if (child.gameObject.activeSelf) // 활성화된 자식만 체크
+                if (grandchild.gameObject.activeSelf) // 활성화된 경우만 체크
                 {
-                    child.gameObject.SetActive(false);
+                    grandchild.gameObject.SetActive(false);
                 }
             }
         }
     }
-
-
 }

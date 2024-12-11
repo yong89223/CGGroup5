@@ -50,17 +50,27 @@ public class EnemyShooting : MonoBehaviour
 
     void Shoot()
     {
-        // 사격 애니메이션 실행
         animator.SetTrigger("shootTrigger");
 
-        // 총알 생성
         foreach (Transform spawnPoint in bulletSpawnPoints)
         {
             GameObject bullet = Instantiate(bulletPrefab, spawnPoint.position, Quaternion.identity);
-            bullet.GetComponent<Rigidbody>().velocity = (player.position - spawnPoint.position).normalized * 10f;
+            Vector3 direction = (player.position - spawnPoint.position).normalized;
+            direction.y = 0f; // Y값 고정
+
+            // 총알에 속도 적용
+            Rigidbody rb = bullet.GetComponent<Rigidbody>();
+            rb.velocity = direction * 10f;
+            rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
+
+            // 적과 총알 충돌 무시
+            Physics.IgnoreCollision(bullet.GetComponent<Collider>(), GetComponent<Collider>());
+
+            // 총알 제거 타이머
+            Destroy(bullet, 5f); // 5초 후 제거
         }
 
-        // 적 이동 중지
         enemyMovement.FreezeMovement(2f);
     }
+
 }
