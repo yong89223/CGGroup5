@@ -28,21 +28,31 @@ public class HealthBarController : MonoBehaviour
                 health.OnEnemyHealthChanged += UpdateHealthBar;
             }
         }
+        else
+        {
+            Debug.LogWarning($"HealthBarController on {gameObject.name}: Health component not found!");
+        }
     }
 
     // 체력 바 업데이트
     private void UpdateHealthBar(int currentHealth = 0)
     {
-        if (health == null) return;
+        if (health == null)
+        {
+            Debug.LogWarning($"HealthBarController on {gameObject.name}: Health is null!");
+            return;
+        }
 
         // 체력 슬라이더와 텍스트 갱신
-        healthSlider.maxValue = health.baseHealth;
+        healthSlider.maxValue = health.baseHealth > 0 ? health.baseHealth : 1; // 기본값 설정
         healthSlider.value = health.currentHealth;
         healthText.text = $"{health.currentHealth}/{health.baseHealth}";
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
+        if (health == null) return;
+
         // 이벤트 해제
         if (health.isPlayer)
         {

@@ -652,6 +652,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1602726379}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &51045198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31822,9 +31834,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1728227279}
   - component: {fileID: 1728227281}
-  - component: {fileID: 1728227283}
   - component: {fileID: 1728227287}
   - component: {fileID: 1728227286}
+  - component: {fileID: 1728227288}
   m_Layer: 5
   m_Name: StoreScreen
   m_TagString: Untagged
@@ -31864,20 +31876,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1728227278}
   m_CullTransparentMesh: 1
---- !u!114 &1728227283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1728227278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 114421fe28f37f047a81548b2a5cd307, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UsernameBox: {fileID: 668764916}
-  CoinBox: {fileID: 1438519988}
 --- !u!114 &1728227286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31918,6 +31916,20 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1728227288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728227278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 114421fe28f37f047a81548b2a5cd307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UsernameBox: {fileID: 668764916}
+  CoinBox: {fileID: 1438519988}
 --- !u!1 &1728893908
 GameObject:
   m_ObjectHideFlags: 0
@@ -37041,6 +37053,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2030219601}
   - component: {fileID: 2030219602}
+  - component: {fileID: 2030219603}
   m_Layer: 5
   m_Name: ScreenManager
   m_TagString: Untagged
@@ -37084,6 +37097,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialPanel: {fileID: 1664010337}
   selectPanel: {fileID: 37192133}
+--- !u!114 &2030219603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030219600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 114421fe28f37f047a81548b2a5cd307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UsernameBox: {fileID: 668764916}
+  CoinBox: {fileID: 1438519988}
 --- !u!1 &2042201759
 GameObject:
   m_ObjectHideFlags: 0

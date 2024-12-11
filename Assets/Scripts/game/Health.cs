@@ -24,30 +24,32 @@ public class Health : MonoBehaviour
     {
         if (isPlayer)
         {
-            // 플레이어: 기본 체력 + 장비 보너스 체력
             var equippedItem = DataManager.instance.nowPlayer.inventory.items.Find(item => item.id == DataManager.instance.nowPlayer.item);
             int itemBonusHp = equippedItem != null ? equippedItem.hp : 0;
-            currentHealth = baseHealth + itemBonusHp;
-            baseHealth = baseHealth + itemBonusHp;
+            baseHealth += itemBonusHp;
         }
         else
         {
-            // 적: 기본 체력 + 스테이지 인덱스 * 10
-            currentHealth = baseHealth + DataManager.instance.nowPlayer.chapterIndex * 10;
-            baseHealth = baseHealth + DataManager.instance.nowPlayer.chapterIndex * 10;
+            baseHealth += DataManager.instance.nowPlayer.chapterIndex * 10;
         }
+
+        currentHealth = baseHealth;
 
         // 초기 체력 변화 이벤트 호출
         TriggerHealthChangedEvent();
     }
 
+
     // 데미지 처리
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        if (currentHealth <= 0)
+        {
+            currentHealth = 0;
+            HandleDeath();
+        }
         TriggerHealthChangedEvent();
-
-
     }
 
     public void IncreaseHealth(int increasing)
@@ -58,10 +60,6 @@ public class Health : MonoBehaviour
             currentHealth = baseHealth;
         TriggerHealthChangedEvent();
 
-        if (currentHealth <= 0)
-        {
-            HandleDeath();
-        }
     }
 
     // 체력 변화 이벤트 호출
