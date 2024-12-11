@@ -20,7 +20,7 @@ public class Health : MonoBehaviour
     }
 
     // 체력 초기화
-    public void InitializeHealth()
+    public void InitializeHealth() 
     {
         if (isPlayer)
         {
@@ -28,11 +28,13 @@ public class Health : MonoBehaviour
             var equippedItem = DataManager.instance.nowPlayer.inventory.items.Find(item => item.id == DataManager.instance.nowPlayer.item);
             int itemBonusHp = equippedItem != null ? equippedItem.hp : 0;
             currentHealth = baseHealth + itemBonusHp;
+            baseHealth = baseHealth + itemBonusHp;
         }
         else
         {
             // 적: 기본 체력 + 스테이지 인덱스 * 10
             currentHealth = baseHealth + DataManager.instance.nowPlayer.chapterIndex * 10;
+            baseHealth = baseHealth + DataManager.instance.nowPlayer.chapterIndex * 10;
         }
 
         // 초기 체력 변화 이벤트 호출

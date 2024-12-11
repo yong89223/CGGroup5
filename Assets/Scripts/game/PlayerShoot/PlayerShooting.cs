@@ -7,7 +7,7 @@ public class PlayerShooting : MonoBehaviour
     public static event Action<Vector3> OnShoot; // 탄환 발사 이벤트
     public bool canShoot = true;
     public float shootCooldown = 3.0f; // 쿨다운 시간
-
+    
     void Update()
     {
         if (Input.GetMouseButtonDown(0) && canShoot)
