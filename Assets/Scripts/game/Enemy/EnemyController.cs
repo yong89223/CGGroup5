@@ -3,8 +3,14 @@ public class EnemyController : MonoBehaviour
 {
     private void OnEnable()
     {
-        GetComponent<Health>().OnEnemyDeath += HandleEnemyDeath; // 적 사망 이벤트 발생
+        var health = GetComponent<Health>();
+        if (health != null)
+        {
+            health.OnEnemyDeath -= HandleEnemyDeath; // 중복 구독 방지
+            health.OnEnemyDeath += HandleEnemyDeath; // 이벤트 구독
+        }
     }
+
 
     private void OnDisable()
     {

@@ -20,7 +20,7 @@ public class Health : MonoBehaviour
     }
 
     // 체력 초기화
-    public void InitializeHealth() 
+    public void InitializeHealth()
     {
         if (isPlayer)
         {
@@ -45,6 +45,17 @@ public class Health : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        TriggerHealthChangedEvent();
+
+
+    }
+
+    public void IncreaseHealth(int increasing)
+    {
+        if (currentHealth + increasing < baseHealth)
+            currentHealth += increasing;
+        else
+            currentHealth = baseHealth;
         TriggerHealthChangedEvent();
 
         if (currentHealth <= 0)
