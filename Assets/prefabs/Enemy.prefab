@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: -8824611173919843661}
   - component: {fileID: 4378700499172729559}
   - component: {fileID: -565600314438351090}
+  - component: {fileID: 8407719050181107406}
   m_Layer: 10
   m_Name: Enemy
   m_TagString: Enemy
@@ -141,8 +142,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e42f2349a36bbcb43993f22791f3f832, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  baseHealth: 100
   currentHealth: 0
+  isPlayer: 0
 --- !u!136 &-1352581169626571419
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -180,6 +182,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTag: Player
   stoppingDistance: 5
+  animator: {fileID: 0}
+  repathInterval: 0.5
 --- !u!114 &4378700499172729559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,12 +198,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTag: Player
   shootRange: 10
-  obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 0
   bulletPrefab: {fileID: 5733097864968230036, guid: 450cad443949d7346ba91eaed1050b5c, type: 3}
-  bulletSpawnPoint: {fileID: 7961542338427818013}
+  bulletSpawnPoints: []
   fireRate: 1
+  animator: {fileID: 0}
 --- !u!195 &-565600314438351090
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -222,3 +224,17 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &8407719050181107406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2354845334819993840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c28570a7748b63f46961a5c538359bc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthSlider: {fileID: 0}
+  healthText: {fileID: 0}

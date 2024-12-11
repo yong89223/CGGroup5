@@ -27,7 +27,9 @@ public class EnemySpawner : MonoBehaviour
         // 랜덤 위치 지정 (플레인 맵 위에서만 생성되도록)
         float spawnX = Random.Range(-mapSize.x / 2, mapSize.x / 2);
         float spawnZ = Random.Range(-mapSize.z / 2, mapSize.z / 2);
-        Vector3 spawnPosition = new Vector3(spawnX, 1, spawnZ);
+        Vector3 spawnPosition = new Vector3(spawnX, 0.3f, spawnZ);
+
+        
 
         Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
     }

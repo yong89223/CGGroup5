@@ -2646,7 +2646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 4859513199851979704, guid: 22a342812bd43414087e9a1c9d1dc775, type: 3}
-  spawnInterval: 20
+  spawnInterval: 10
   mapSize: {x: 28, y: 0, z: 28}
 --- !u!1001 &484837860
 PrefabInstance:
